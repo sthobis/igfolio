@@ -3,12 +3,13 @@
   "name": "igfolio",
   "alias": "igfolio",
   "builds": [
-  	{ "src": "www/package.json", "use": "@now/next" }
+    { "src": "www/package.json", "use": "@now/next" },
+    { "src": "api/*.js", "use": "@now/node" }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "src": "/api/instagram.js",
+      "methods": ["POST"]
     },
     {
       "src": "/(.*)",
